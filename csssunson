@@ -1,0 +1,88 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+
+        .form-container {
+            width: 400px;
+            padding: 30px;
+            background-color: rgb(231, 190, 100);
+            border: 20px solid black;
+            border-radius: 70px;
+            
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(184, 102, 73);
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        input[type="radio"] {
+            width: auto;
+        }
+
+        .gender {
+            text-align: center;
+        }
+
+        .gender label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            background-color: chocolate;
+        }
+
+        input[type="submit"] {
+            width: 120px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+        }
+
+        input[type="submit"]:hover {
+            background-color: white;
+            color: black;
+        }
