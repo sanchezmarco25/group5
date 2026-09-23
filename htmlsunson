@@ -4,23 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
-
     <link rel="stylesheet" href="style.css">
-    
 </head>
-
 <body>
 
-    <div class="form-container">
-
+    <main class="form-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/009/664/099/original/sun-sun-ray-icon-transparent-free-png.png" alt="Sun icon" height="100" width="100">
         <h1>Registration Form</h1>
 
         <form>
-            <img src="https://static.vecteezy.com/system/resources/previews/023/834/154/original/sun-icon-vector.jpg" alt="" height="200px" width="200px">
-
             <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required placeholder="First Name">
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
             </div>
 
             <div class="form-group">
@@ -30,60 +25,52 @@
 
             <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required placeholder="Last Name">
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
             </div>
 
             <div class="form-group">
                 <label for="birthDate">Birth Date</label>
-                <input type="date" id="birthDate" name="birthDate" required >
+                <input type="date" id="birthDate" name="birthDate" required>
             </div>
 
-            <div class="form-group gender">
-                <label>Gender</label>
+            <fieldset class="form-group gender">
+                <legend>Gender</legend>
 
-                <input type="radio" id="male" name="gender" value="Male">
-                <label for="male">Male</label>
-
-                <input type="radio" id="female" name="gender" value="Female">
-                <label for="female">Female</label>
-
-                <input type="radio" id="other" name="gender" value="Other">
-                <label for="other">Other</label>
-            </div>
+                <label><input type="radio" id="male" name="gender" value="Male"> Male</label>
+                <label><input type="radio" id="female" name="gender" value="Female"> Female</label>
+                <label><input type="radio" id="other" name="gender" value="Other"> Other</label>
+            </fieldset>
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="username@email.com">
+                <input type="email" id="email" name="email" placeholder="username@email.com" required>
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required placeholder="09XXXXXXXXX">
+                <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXXX" required>
             </div>
 
             <div class="form-group">
                 <label for="address">Address</label>
-                <textarea id="address" name="address" rows="4" required placeholder="House No. Lot"></textarea>
+                <textarea id="address" name="address" rows="4" placeholder="House No. Lot" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter Password">
+                <input type="password" id="password" name="password" placeholder="Enter Password" required>
             </div>
 
             <div class="buttons">
-                <button onclick="register()">Register</button>
-                
+                <button type="submit">Register</button>
             </div>
-
         </form>
-
-    </div>
+    </main>
 
 </body>
 </html>
