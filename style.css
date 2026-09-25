@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("solarsun.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-container {
+    width: 380px;
+    max-width: 100%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.form-container img {
+    width: 200px;
+    height: 200px;
+}
+
+h2 {
+    margin: 5px 0;
+    font-size: 20px;
+}
+
+h1 {
+    margin: 5px 0 15px;
+    font-size: 22px;
+}
+
+form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label,
+legend {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 7px;
+    margin-top: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+textarea {
+    resize: none;
+    height: 55px;
+}
+
+.gender {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.gender label {
+    font-weight: normal;
+    margin-right: 8px;
+}
+
+.gender input {
+    width: auto;
+    margin-right: 3px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background: #e26200;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c95000;
+}
