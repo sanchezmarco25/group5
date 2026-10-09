@@ -10,11 +10,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $user->registerCustomer($_POST);
 
     if ($result === true) {
-        echo "Registration successful!";
-        echo "<br><a href='../fieldset.html'>Back to Registration</a>";
+        echo "<script>
+            alert('Registration successful! Welcome to Sun Son Solar.');
+            window.location.href = '../home.html'; 
+        </script>";
     } else {
-        echo "Error: " . $result;
-        echo "<br><a href='../fieldset.html'>Try Again</a>";
+        echo "<script>
+            alert('Error: " . addslashes($result) . "');
+            window.location.href = '../index.html';
+        </script>";
     }
     
     mysqli_close($db);
