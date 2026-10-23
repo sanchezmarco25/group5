@@ -15,10 +15,10 @@
 <body>
 
 <div class="nav">
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#login">Login</a>
-    <a href="#register">Register</a>
+    <a href="/">Home</a>
+    <a href="/#services">Services</a>
+    <a href="/#login">Login</a>
+    <a href="/register">Register</a>
 </div>
 
 <div class="hero">
@@ -32,8 +32,8 @@
         <p>Consultation, designing, permitting, installation, maintenance, repair, and monitoring.</p>
     </section>
 
-    <div style="display: flex; gap: 20px;">
-        <div class="form-box" id="login" style="flex: 1;">
+    <div style="display: flex; justify-content: center; margin-top: 30px;">
+        <div class="form-box" id="login" style="width: 100%; max-width: 400px;">
             <h2>Login</h2>
             <form action="/auth/login_process" method="post">
                 <label>Username:</label><br>
@@ -43,30 +43,10 @@
                 <button type="submit">Log In</button>
             </form>
         </div>
-
-        <div class="form-box" id="register" style="flex: 1;">
-            <h2>Customer Registration</h2>
-            <form action="/auth/register" method="post">
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="middle_name" placeholder="Middle Name">
-                <input type="text" name="last_name" placeholder="Last Name" required><br><br>
-                <input type="date" name="birthdate" required>
-                <select name="gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select><br><br>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="phone_number" placeholder="Phone Number" required><br><br>
-                <textarea name="address" placeholder="Address" required></textarea><br><br>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required><br><br>
-                <button type="submit">Register</button>
-            </form>
-        </div>
     </div>
 </div>
 
-<footer style="background: #333; color: white; text-align: center; padding: 20px;">
+<footer style="background: #333; color: white; text-align: center; padding: 20px; margin-top: 40px;">
     <p>Sun Son Solar &copy; 2026. Pasig City.</p>
 </footer>
 

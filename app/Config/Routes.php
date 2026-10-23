@@ -14,3 +14,4 @@ $routes->get('admin/dashboard', 'Admin::index');
 $routes->get('customer/dashboard', 'Customer::index');
 $routes->get('technician/dashboard', 'Technician::index');
 $routes->post('admin/register_employee', 'Admin::register_employee');
+$routes->get('register', 'Home::register');
