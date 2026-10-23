@@ -1,0 +1,121 @@
+ERROR - 2026-10-23 11:56:13 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Marco Sanchez\group5\system\Database\MySQLi\Connection.php:200
+Stack trace:
+#0 C:\Users\Marco Sanchez\group5\system\Database\MySQLi\Connection.php(200): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(550): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(792): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(1709): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(1729): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\Users\Marco Sanchez\group5\system\Database\MigrationRunner.php(831): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\Users\Marco Sanchez\group5\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\Users\Marco Sanchez\group5\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\Users\Marco Sanchez\group5\system\CLI\SignalTrait.php(243): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\Users\Marco Sanchez\group5\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\Users\Marco Sanchez\group5\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\Users\Marco Sanchez\group5\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\Users\Marco Sanchez\group5\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#13 C:\Users\Marco Sanchez\group5\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\Users\Marco Sanchez\group5\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Marco Sanchez\group5\system\Database\MySQLi\Connection.php:230
+Stack trace:
+#0 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(550): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(792): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(1709): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\Users\Marco Sanchez\group5\system\Database\BaseConnection.php(1729): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\Users\Marco Sanchez\group5\system\Database\MigrationRunner.php(831): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\Users\Marco Sanchez\group5\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\Users\Marco Sanchez\group5\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\Users\Marco Sanchez\group5\system\CLI\SignalTrait.php(243): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\Users\Marco Sanchez\group5\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\Users\Marco Sanchez\group5\system\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\Users\Marco Sanchez\group5\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\Users\Marco Sanchez\group5\system\Boot.php(444): CodeIgniter\CLI\Console->run()
+#12 C:\Users\Marco Sanchez\group5\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\Users\Marco Sanchez\group5\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-10-23 12:15:18 --> Table 'users' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 294.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(294): mysqli->query('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`role` ENUM(\'admin\',\'employee\',\'technician\',\'customer\') NOT NULL DEFAULT \'customer\',
+	`department` ENUM(\'Administration\',\'IT\',\'Dispatch\',\'Accounting\',\'HR\',\'Marketing\',\'Sales\',\'Customer Service\',\'None\') NOT NULL DEFAULT \'None\',
+	`first_name` VARCHAR(100) NOT NULL,
+	`middle_name` VARCHAR(100) NULL,
+	`last_name` VARCHAR(100) NOT NULL,
+	`birthdate` DATE NOT NULL,
+	`gender` VARCHAR(20) NOT NULL,
+	`email` VARCHAR(150) NOT NULL UNIQUE,
+	`phone_number` VARCHAR(20) NOT NULL,
+	`address` TEXT NOT NULL,
+	`username` VARCHAR(50) NOT NULL UNIQUE,
+	`password` VARCHAR(255) NOT NULL,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(905): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`role` ENUM(\'admin\',\'employee\',\'technician\',\'customer\') NOT NULL DEFAULT \'customer\',
+	`department` ENUM(\'Administration\',\'IT\',\'Dispatch\',\'Accounting\',\'HR\',\'Marketing\',\'Sales\',\'Customer Service\',\'None\') NOT NULL DEFAULT \'None\',
+	`first_name` VARCHAR(100) NOT NULL,
+	`middle_name` VARCHAR(100) NULL,
+	`last_name` VARCHAR(100) NOT NULL,
+	`birthdate` DATE NOT NULL,
+	`gender` VARCHAR(20) NOT NULL,
+	`email` VARCHAR(150) NOT NULL UNIQUE,
+	`phone_number` VARCHAR(20) NOT NULL,
+	`address` TEXT NOT NULL,
+	`username` VARCHAR(50) NOT NULL UNIQUE,
+	`password` VARCHAR(255) NOT NULL,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(822): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`role` ENUM(\'admin\',\'employee\',\'technician\',\'customer\') NOT NULL DEFAULT \'customer\',
+	`department` ENUM(\'Administration\',\'IT\',\'Dispatch\',\'Accounting\',\'HR\',\'Marketing\',\'Sales\',\'Customer Service\',\'None\') NOT NULL DEFAULT \'None\',
+	`first_name` VARCHAR(100) NOT NULL,
+	`middle_name` VARCHAR(100) NULL,
+	`last_name` VARCHAR(100) NOT NULL,
+	`birthdate` DATE NOT NULL,
+	`gender` VARCHAR(20) NOT NULL,
+	`email` VARCHAR(150) NOT NULL UNIQUE,
+	`phone_number` VARCHAR(20) NOT NULL,
+	`address` TEXT NOT NULL,
+	`username` VARCHAR(50) NOT NULL UNIQUE,
+	`password` VARCHAR(255) NOT NULL,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(574): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`role` ENUM(\'admin\',\'employee\',\'technician\',\'customer\') NOT NULL DEFAULT \'customer\',
+	`department` ENUM(\'Administration\',\'IT\',\'Dispatch\',\'Accounting\',\'HR\',\'Marketing\',\'Sales\',\'Customer Service\',\'None\') NOT NULL DEFAULT \'None\',
+	`first_name` VARCHAR(100) NOT NULL,
+	`middle_name` VARCHAR(100) NULL,
+	`last_name` VARCHAR(100) NOT NULL,
+	`birthdate` DATE NOT NULL,
+	`gender` VARCHAR(20) NOT NULL,
+	`email` VARCHAR(150) NOT NULL UNIQUE,
+	`phone_number` VARCHAR(20) NOT NULL,
+	`address` TEXT NOT NULL,
+	`username` VARCHAR(50) NOT NULL UNIQUE,
+	`password` VARCHAR(255) NOT NULL,
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\2026-10-23-000000_CreateUsersTable.php(40): CodeIgniter\Database\Forge->createTable('users')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1024): App\Database\Migrations\CreateUsersTable->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(243): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+13 SYSTEMPATH\Boot.php(444): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
