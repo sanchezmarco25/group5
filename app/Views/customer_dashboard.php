@@ -14,7 +14,7 @@
     <div class="nav">
         <strong>Sun Son Solar</strong>
         <span style="float: right;">
-            Welcome, <?= esc($username) ?> | <a href="/auth/logout">Logout</a>
+            Welcome, <?= esc($username) ?> | <a href="<?= site_url('auth/logout') ?>">Logout</a>
         </span>
     </div>
 

@@ -15,7 +15,7 @@
     <div class="nav">
         <strong>Sun Son Field Portal</strong>
         <span style="float: right;">
-            Welcome, <?= esc($username) ?> | <a href="/auth/logout">Logout</a>
+            Welcome, <?= esc($username) ?> | <a href="<?= site_url('auth/logout') ?>">Logout</a>
         </span>
     </div>
 
@@ -30,7 +30,7 @@
 
     <div class="card">
         <h3>Report a Problem</h3>
-        <form action="/technician/submit_report" method="post">
+        <form action="<?= site_url('technician/submit_report') ?>" method="post">
             <textarea name="report_text" style="width: 100%; height: 80px;" placeholder="Log equipment issues or customer concerns here..." required></textarea><br><br>
             <button type="submit">Submit Report to Admin</button>
         </form>
@@ -52,7 +52,7 @@
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
 
-            fetch('/technician/save_checkin', {
+            fetch('<?= site_url('technician/save_checkin') ?>', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',

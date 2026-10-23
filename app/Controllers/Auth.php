@@ -6,29 +6,28 @@ class Auth extends BaseController
 {
     public function register()
     {
-        if ($this->request->getMethod() == 'post') {
-            $model = new UserModel();
-            
-            $data = [
-                'role'         => 'customer', // Forces self-registration to customer role[cite: 4]
-                'department'   => 'None',
-                'first_name'   => $this->request->getVar('first_name'),
-                'middle_name'  => $this->request->getVar('middle_name'),
-                'last_name'    => $this->request->getVar('last_name'),
-                'birthdate'    => $this->request->getVar('birthdate'),
-                'gender'       => $this->request->getVar('gender'),
-                'email'        => $this->request->getVar('email'),
-                'phone_number' => $this->request->getVar('phone_number'),
-                'address'      => $this->request->getVar('address'),
-                'username'     => $this->request->getVar('username'),
-                'password'     => $this->request->getVar('password'), 
-            ];
+        $model = new UserModel();
 
-            if ($model->save($data)) {
-                return redirect()->to('/')->with('success', 'Registration successful! Please login.');
-            }
-            return redirect()->back()->withInput()->with('error', 'Registration failed.');
+        $data = [
+            'role'         => 'customer',
+            'department'   => 'None',
+            'first_name'   => $this->request->getVar('first_name'),
+            'middle_name'  => $this->request->getVar('middle_name'),
+            'last_name'    => $this->request->getVar('last_name'),
+            'birthdate'    => $this->request->getVar('birthdate'),
+            'gender'       => $this->request->getVar('gender'),
+            'email'        => $this->request->getVar('email'),
+            'phone_number' => $this->request->getVar('phone_number'),
+            'address'      => $this->request->getVar('address'),
+            'username'     => $this->request->getVar('username'),
+            'password'     => $this->request->getVar('password'),
+        ];
+
+        if ($model->save($data)) {
+            return redirect()->to(site_url('home'))->with('success', 'Registration successful! Please log in.');
         }
+
+        return redirect()->back()->withInput()->with('error', 'Registration failed.');
     }
 
     public function login_process()
@@ -55,7 +54,7 @@ class Auth extends BaseController
         }
         
         $session->setFlashdata('error', 'Invalid credentials');
-        return redirect()->to('/');
+        return redirect()->to(site_url('login'));
     }
 
     public function logout()
